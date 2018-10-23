@@ -1,0 +1,38 @@
+<template class="card-form">
+  <require from="./card-form.css"></require>
+
+  <h1 if.bind="routed">Add a new card</h1>
+
+  <div class="card-form__container">
+    <span class="card-form__description">Given </span>
+    <div type="text"
+         contenteditable.bind="isEditable"
+         class="card-form__keyword"
+         textcontent.two-way="editedCard.given"
+         ref="given"></div>
+  </div>
+  <div class="card-form__container">
+    <span class="card-form__description">When </span>
+    <div type="text"
+         contenteditable.bind="isEditable"
+         class="card-form__keyword"
+         textcontent.two-way="editedCard.when"></div>
+  </div>
+  <div class="card-form__container">
+    <span class="card-form__description">Then </span>
+    <div type="text"
+         contenteditable.bind="isEditable"
+         class="card-form__keyword"
+         textcontent.two-way="editedCard.then"></div>
+  </div>
+
+  <button click.delegate="saveCard()"
+          if.bind="isEditable"
+          class="card-form__save">Save</button>
+  <button click.delegate="editCard()"
+          else
+          class="card-form__edit">Edit</button>
+  <button click.delegate="cancel()"
+          if.bind="isEditable"
+          class="card-form__edit">Cancel</button>
+</template>

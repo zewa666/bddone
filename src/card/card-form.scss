@@ -1,0 +1,29 @@
+.card-form {
+  border: 1px solid black;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  padding: 15px;
+  margin: 5px;
+
+  &__container {
+    display: flex;
+  }
+
+  &__description {
+    width: 70px;
+  }
+
+  &__keyword {
+    border: none;
+    font-size: 15px;
+    resize: none;
+    max-height: 100px;
+    width: 100%;
+  }
+
+  &__save {
+    margin-top: 40px;
+  }
+}

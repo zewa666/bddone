@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+}
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.router-view {
+  display: flex;
+  flex-direction: column;
+}

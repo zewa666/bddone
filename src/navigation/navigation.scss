@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 50px 0 0;
+
+  &__list {
+    list-style: none;
+    padding: 0 0 0 20px;
+  }
+
+  &__item {
+    &--active {
+      text-decoration: underline;
+    }
+  }
+
+  &__link {
+    border: none;
+    font-weight: bolder;
+    outline: 0;
+    text-decoration: none;
+
+    &:active,
+    &:visited {
+      color: black;
+    }
+  }
+}

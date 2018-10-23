@@ -1,0 +1,8 @@
+<template>
+  <require from="./app.css"></require>
+
+  <div class="app">
+    <navigation router.bind="router"></navigation>
+    <router-view class="router-view ${router.currentInstruction.config.settings.block}"></router-view>
+  </div>
+</template>
