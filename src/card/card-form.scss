@@ -19,10 +19,12 @@
     border: 1px dotted lightslategray;
     font-size: 15px;
     min-height: 18px;
-    max-height: 100px;
+    max-height: 90px;
     margin-bottom: 2px;
     outline: 0;
+    overflow: hidden;
     resize: none;
+    max-width: 348px;
     width: 100%;
   }
 
