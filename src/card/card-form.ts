@@ -1,7 +1,7 @@
 import { autoinject, bindable, computedFrom, TaskQueue } from "aurelia-framework";
 import { Store } from "aurelia-store";
 
-import { saveCard } from "../store/actions";
+import { deleteCard, saveCard } from "../store/actions";
 import { Card } from "../store/models";
 import { State } from "../store/state";
 
@@ -67,6 +67,10 @@ export class CardForm {
         selection.addRange(range);
       }
     });
+  }
+
+  public deleteCard() {
+    this.store.dispatch(deleteCard, this.card.id);
   }
 
   public cancel() {

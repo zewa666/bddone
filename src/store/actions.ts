@@ -40,3 +40,17 @@ export function setActiveCard(state: State, card: Card) {
 }
 
 store.registerAction("Setting active card", setActiveCard);
+
+export function deleteCard(state: State, id: string) {
+  const idx = state.cards.findIndex((c) => c.id === id);
+
+  return {
+    ...state,
+    cards: [
+      ...state.cards.slice(0, idx),
+      ...state.cards.slice(idx + 1),
+    ]
+  };
+}
+
+store.registerAction("Delete card", deleteCard);
