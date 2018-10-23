@@ -3,7 +3,7 @@
   border-radius: 3px;
   display: flex;
   flex-direction: column;
-  min-width: 500px;
+  min-width: 420px;
   padding: 15px;
   margin: 5px;
 
@@ -16,10 +16,13 @@
   }
 
   &__keyword {
-    border: none;
+    border: 1px dotted lightslategray;
     font-size: 15px;
-    resize: none;
+    min-height: 18px;
     max-height: 100px;
+    margin-bottom: 2px;
+    outline: 0;
+    resize: none;
     width: 100%;
   }
 
