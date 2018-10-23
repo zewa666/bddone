@@ -1,6 +1,6 @@
 import { autoinject } from "aurelia-framework";
 import { AppRouter } from "aurelia-router";
-import { Store } from "aurelia-store";
+import { localStorageMiddleware, MiddlewarePlacement, rehydrateFromLocalStorage, Store } from "aurelia-store";
 import { Subscription } from "rxjs";
 
 import { State } from "./store/state";
@@ -13,6 +13,9 @@ export class App {
   private subscription: Subscription;
 
   constructor(private store: Store<State>) {
+    this.store.registerAction("Rehydrate", rehydrateFromLocalStorage);
+    this.store.dispatch(rehydrateFromLocalStorage);
+    this.store.registerMiddleware(localStorageMiddleware, MiddlewarePlacement.After);
     this.subscription = this.store.state.subscribe((state) => this.state = state);
   }
 

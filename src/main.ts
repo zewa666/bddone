@@ -1,6 +1,7 @@
 import { Aurelia } from "aurelia-framework";
-import { initialState } from "store/state";
+
 import environment from "./environment";
+import { initialState } from "./store/state";
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
