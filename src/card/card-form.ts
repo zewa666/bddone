@@ -1,4 +1,4 @@
-import { autoinject, bindable, TaskQueue } from "aurelia-framework";
+import { autoinject, bindable, computedFrom, TaskQueue } from "aurelia-framework";
 import { Store } from "aurelia-store";
 
 import { saveCard } from "../store/actions";
@@ -8,7 +8,7 @@ import { State } from "../store/state";
 @autoinject()
 export class CardForm {
   @bindable() public card: Card;
-  public given: HTMLTextAreaElement;
+  public given: HTMLDivElement;
   public editedCard: Card;
   public isEditable: boolean = false;
 
@@ -18,6 +18,15 @@ export class CardForm {
     private store: Store<State>,
     private taskQueue: TaskQueue
   ) { }
+
+  @computedFrom("editedCard.id", "editedCard.given", "editedCard.when", "editedCard.then")
+  public get canSave() {
+    return !(!this.editedCard.id && (
+      !this.editedCard.given ||
+      !this.editedCard.when ||
+      !this.editedCard.then
+    ));
+  }
 
   public activate(params) {
     if (params.idOrNew === "new") {

@@ -28,11 +28,12 @@
 
   <button click.delegate="saveCard()"
           if.bind="isEditable"
+          disabled.bind="!canSave"
           class="card-form__save">Save</button>
   <button click.delegate="editCard()"
           else
           class="card-form__edit">Edit</button>
   <button click.delegate="cancel()"
-          if.bind="isEditable"
+          if.bind="isEditable && !routed"
           class="card-form__edit">Cancel</button>
 </template>
