@@ -14,7 +14,7 @@ export class CardService {
   public getAvailableCompletions(type: GWT) {
     return this.store.state.pipe(
       pluck<State, Card[]>("cards"),
-      map((cards) => cards.map((c) => c.given))
+      map((cards) => cards.map((c) => c[type]))
     );
   }
 }
