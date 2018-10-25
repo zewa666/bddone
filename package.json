@@ -6,6 +6,10 @@
     "type": "???",
     "url": "???"
   },
+  "scripts": {
+    "build": "au build --env prod",
+    "deploy": "./deploy.sh"
+  },
   "license": "MIT",
   "dependencies": {
     "aurelia-animator-css": "^1.0.4",
