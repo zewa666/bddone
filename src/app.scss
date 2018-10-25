@@ -30,4 +30,13 @@
       background-color: lighten(darkred, 5%);
     }
   }
+
+  &--save {
+    color: black;
+    background-color: green;
+
+    &:hover {
+      background-color: lighten(green, 5%);
+    }
+  }
 }
