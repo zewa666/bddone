@@ -1,5 +1,6 @@
 <template class="card-form">
   <require from="./card-form.css"></require>
+  <require from="awesomplete/awesomplete.css"></require>
 
   <h1 if.bind="routed">Add a new card</h1>
 
@@ -7,6 +8,7 @@
     <span class="card-form__description">Given </span>
     <div type="text"
          contenteditable.bind="isEditable"
+         awesomeplete="given"
          class="card-form__keyword"
          textcontent.two-way="editedCard.given"
          ref="given"></div>
@@ -14,6 +16,7 @@
   <div class="card-form__container">
     <span class="card-form__description">When </span>
     <div type="text"
+         awesomeplete="when"
          contenteditable.bind="isEditable"
          class="card-form__keyword"
          textcontent.two-way="editedCard.when"></div>
@@ -21,6 +24,7 @@
   <div class="card-form__container">
     <span class="card-form__description">Then </span>
     <div type="text"
+         awesomeplete="then"
          contenteditable.bind="isEditable"
          class="card-form__keyword"
          textcontent.two-way="editedCard.then"></div>
