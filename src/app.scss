@@ -14,6 +14,10 @@
 }
 
 .btn {
+  @media print {
+    display: none;
+  }
+
   appearance: none;
   border: 1px solid gray;
   border-radius: 6px;

@@ -7,11 +7,18 @@
   padding: 15px;
   margin: 5px;
 
+  @media print {
+    min-width: 0;
+    width: 43%;
+  }
+
   &__container {
     display: flex;
 
     &--last {
-      margin-bottom: 20px;
+      @media screen {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -21,6 +28,11 @@
 
   &__keyword {
     border: 1px dotted lightslategray;
+
+    @media print {
+      border: none;
+    }
+
     font-size: 15px;
     min-height: 18px;
     max-height: 90px;

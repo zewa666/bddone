@@ -1,4 +1,8 @@
 .navigation {
+  @media print {
+    display: none;  
+  }
+
   flex: 0 0 250px;
   flex-direction: column;
   margin-top: 100px;
@@ -17,6 +21,7 @@
 
   &__link {
     border: none;
+    color: black;
     font-weight: bolder;
     outline: 0;
     text-decoration: none;
