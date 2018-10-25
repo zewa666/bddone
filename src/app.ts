@@ -38,7 +38,7 @@ export class App {
         nav: true,
         route: "card/*idOrNew",
         settings: {
-          block: "card-form"
+          bem: "card-form card-form--routed"
         },
         title: "Add new card"
       }
