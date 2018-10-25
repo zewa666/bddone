@@ -6,6 +6,7 @@ import { initialState } from "./store/state";
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
+    .feature("components")
     .feature("card")
     .globalResources([
       "./navigation/navigation",
