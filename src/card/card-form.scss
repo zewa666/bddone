@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .card-form {
   border: 1px solid black;
   border-radius: 3px;
@@ -7,9 +9,23 @@
   padding: 15px;
   margin: 5px;
 
+  @include phonePortrait() {
+    min-width: 0;
+    width: 100%;
+  }
+
   @media print {
     min-width: 0;
     width: 43%;
+  }
+
+  &--routed {
+    border: none;
+    
+    @include phonePortrait() {
+      padding: 0;
+      width: 95%;
+    }
   }
 
   &__container {

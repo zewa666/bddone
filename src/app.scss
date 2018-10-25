@@ -1,7 +1,15 @@
+@import "./mixins";
+
 .app {
   display: flex;
   justify-items: stretch;
   align-items: flex-start;
+
+  @include phonePortrait() {
+    flex-direction: column;
+  }
+
+  
 }
 
 * {
@@ -25,6 +33,10 @@
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
   padding: 2px;
+
+  @include phonePortrait() {
+    padding: 10px;
+  }
 
   &--delete {
     color: white;

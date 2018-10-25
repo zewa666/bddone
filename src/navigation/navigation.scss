@@ -1,3 +1,5 @@
+@import "../mixins";
+
 .navigation {
   @media print {
     display: none;  
@@ -7,10 +9,19 @@
   flex-direction: column;
   margin-top: 100px;
   
+  @include phonePortrait() {
+    flex-direction: row;
+    margin-top: 0;
+    flex: 0 0 25px;
+  }
 
   &__list {
     list-style: none;
     padding: 0 0 0 20px;
+
+    @include phonePortrait() {
+      display: inline-block;
+    }
   }
 
   &__item {
