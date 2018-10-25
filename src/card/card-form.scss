@@ -9,6 +9,10 @@
 
   &__container {
     display: flex;
+
+    &--last {
+      margin-bottom: 20px;
+    }
   }
 
   &__description {
