@@ -27,15 +27,23 @@
   }
 
   appearance: none;
+  background-color: #e7e7e7;
   border: 1px solid gray;
   border-radius: 6px;
+  color: black;
   cursor: pointer;
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
   padding: 2px;
+  text-align: center;
+  text-decoration: none;
 
   @include phonePortrait() {
     padding: 10px;
+  }
+
+  &:hover {
+    background-color: lighten(#e7e7e7, 5%);
   }
 
   &--delete {

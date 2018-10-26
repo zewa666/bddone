@@ -1,0 +1,14 @@
+@import "../app";
+
+.toolbar {
+  align-items: center;
+  display: flex;
+  margin-bottom: 30px;
+
+  &__export {
+    @extend .btn;
+
+    margin-right: 10px;
+    width: 120px;
+  }
+}
