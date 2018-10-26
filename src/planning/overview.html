@@ -1,5 +1,17 @@
-<template>
+<template class="overview">
+  <require from="./overview.css"></require> 
   <h1>Planning overview</h1>
 
+  <div class="overview__toolbar toolbar">
+    <a click.delegate="export()"
+       ref="btnExport"
+       download="bddone-data.json"
+       class="toolbar__export">Export</a>
+
+    <div class="toolbar__cards-total">
+      Number of cards: ${state.cards.length}
+    </div>
+  </div>
+
   <card-list></card-list>
-</template>  
+</template>

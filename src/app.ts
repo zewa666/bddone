@@ -29,6 +29,9 @@ export class App {
         name: "planning",
         nav: true,
         route: ["", "planning"],
+        settings: {
+          bem: "overview"
+        },
         title: "Planning"
       },
       {
