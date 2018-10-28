@@ -23,6 +23,7 @@ export class App {
     this.router = router;
 
     config.title = "BDDone";
+    config.options.pushState = true;
     config.map([
       {
         moduleId: "planning/overview",
@@ -44,6 +45,13 @@ export class App {
           bem: "card-form card-form--routed"
         },
         title: "Add new card"
+      },
+      {
+        moduleId: "navigation/callback",
+        name: "callback",
+        nav: false,
+        route: "authcb",
+        title: "Auth callback"
       }
     ]);
   }
