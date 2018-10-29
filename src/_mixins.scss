@@ -5,3 +5,11 @@
      @content;
   } 
 }
+
+@mixin srcset() {
+  @media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) {
+    @content;
+  }
+}

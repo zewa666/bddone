@@ -4,6 +4,7 @@ import { Card } from "./models";
 export interface State {
   cards: Card[];
   activeCard: Card;
+  user?: auth0.Auth0UserProfile;
 }
 
 const initialCard = {

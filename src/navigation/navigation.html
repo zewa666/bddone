@@ -1,10 +1,23 @@
 <template class="navigation">
   <require from="./navigation.css"></require>
 
+  <button if.bind="!authService.user"
+          class="btn btn--github"
+          click.delegate="authService.login()">Login with</button>
+  <div else
+       class="navigation__logged-in">
+    <div class="navigation__greeting">
+      Hello <span class="navigation__username">${authService.user.nickname}</span>
+    </div>
+    <button class="btn btn--github"
+            click.delegate="authService.logout()">Logout from</button>
+  </div>
+
   <ul repeat.for="nav of router.navigation"
       class="navigation__list">
     <li class="navigation__item ${nav.isActive ? 'navigation__item--active' : ''}">
-      <a class="navigation__link" href.bind="nav.href">${nav.title}</a>
+      <a class="navigation__link"
+         href.bind="nav.href">${nav.title}</a>
     </li>
   </ul>
 </template>

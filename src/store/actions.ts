@@ -30,7 +30,6 @@ export function saveCard(state: State, model: Card) {
 
   return clone;
 }
-
 store.registerAction("Save card", saveCard);
 
 export function setActiveCard(state: State, card: Card) {
@@ -38,7 +37,6 @@ export function setActiveCard(state: State, card: Card) {
     activeCard: card
   });
 }
-
 store.registerAction("Setting active card", setActiveCard);
 
 export function deleteCard(state: State, id: string) {
@@ -52,5 +50,34 @@ export function deleteCard(state: State, id: string) {
     ]
   };
 }
-
 store.registerAction("Delete card", deleteCard);
+
+export function loginUser(
+  state: State,
+  authResult: auth0.Auth0DecodedHash,
+  user: auth0.Auth0UserProfile
+) {
+  const expiresAt = JSON.stringify(
+    authResult.expiresIn * 1000 + new Date().getTime()
+  );
+  localStorage.setItem("access_token", authResult.accessToken);
+  localStorage.setItem("id_token", authResult.idToken);
+  localStorage.setItem("expires_at", expiresAt);
+
+  return Object.assign({}, state, {
+    user
+  });
+}
+store.registerAction("Login user", loginUser);
+
+export function logoutUser(state: State) {
+  localStorage.removeItem("access_token");
+  localStorage.removeItem("id_token");
+  localStorage.removeItem("expires_at");
+
+  return Object.assign({}, state, {
+    user: undefined
+  });
+}
+
+store.registerAction("Logout user", logoutUser);
