@@ -1,7 +1,7 @@
 import { autoinject, bindable } from "aurelia-framework";
 import { AppRouter } from "aurelia-router";
 
-import { AuthService } from "./auth-service";
+import { AuthService } from "../services/auth-service";
 
 @autoinject()
 export class Navigation {

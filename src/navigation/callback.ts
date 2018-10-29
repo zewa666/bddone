@@ -1,6 +1,6 @@
 import { autoinject } from "aurelia-framework";
 
-import { AuthService } from "./auth-service";
+import { AuthService } from "../services/auth-service";
 
 @autoinject()
 export class Callback {
