@@ -12,7 +12,7 @@ export class AuthService {
   public auth0 = new auth0.WebAuth({
     clientID: "Ddcw8IGcmGph8RDGi8UaUrP3ve9muur_",
     domain: "bddone.eu.auth0.com",
-    redirectUri: "http://localhost:9000/authcb",
+    redirectUri: `${window.location.origin}/authcb`,
     responseType: "token id_token",
     scope: "openid profile"
   });
