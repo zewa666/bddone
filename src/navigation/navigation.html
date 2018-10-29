@@ -1,12 +1,14 @@
 <template class="navigation">
   <require from="./navigation.css"></require>
 
-  <button if.bind="!authService.isAuthenticated()"
+  <button if.bind="!authService.user"
           class="btn btn--github"
           click.delegate="authService.login()">Login with</button>
   <div else
        class="navigation__logged-in">
-    Hello ${authService.user.nickname}
+    <div class="navigation__greeting">
+      Hello <span class="navigation__username">${authService.user.nickname}</span>
+    </div>
     <button class="btn btn--github"
             click.delegate="authService.logout()">Logout from</button>
   </div>
