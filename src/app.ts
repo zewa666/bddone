@@ -54,7 +54,10 @@ export class App {
         moduleId: "navigation/callback",
         name: "callback",
         nav: false,
-        route: "authcb",
+        route: [
+          "authcb",
+          "*acces-token="
+        ],
         title: "Auth callback"
       }
     ]);
