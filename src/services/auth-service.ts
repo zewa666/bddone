@@ -13,7 +13,7 @@ export class AuthService {
     clientID: "Ddcw8IGcmGph8RDGi8UaUrP3ve9muur_",
     domain: "bddone.eu.auth0.com",
     // tslint:disable-next-line:max-line-length
-    redirectUri: `${window.location.origin}${!window.location.origin.includes("localhost") ? "/bddone#authcb" :  "/authcb"}`,
+    redirectUri: `${window.location.origin}${!window.location.origin.includes("localhost") ? "/bddone#authcb/" :  "/authcb"}`,
     responseType: "token id_token",
     scope: "openid profile"
   });
