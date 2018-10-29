@@ -2,9 +2,14 @@
   <require from="./navigation.css"></require>
 
   <button if.bind="!authService.isAuthenticated()"
-          click.delegate="authService.login()">Login with Github</button>
-  <button else
-          click.delegate="authService.logout()">Logout</button>
+          class="btn btn--github"
+          click.delegate="authService.login()">Login with</button>
+  <div else
+       class="navigation__logged-in">
+    Hello ${authService.user.nickname}
+    <button class="btn btn--github"
+            click.delegate="authService.logout()">Logout from</button>
+  </div>
 
   <ul repeat.for="nav of router.navigation"
       class="navigation__list">

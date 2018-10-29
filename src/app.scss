@@ -22,6 +22,8 @@
 }
 
 .btn {
+  $btnFontSize: 16px;
+
   @media print {
     display: none;
   }
@@ -32,7 +34,7 @@
   border-radius: 6px;
   color: black;
   cursor: pointer;
-  font-size: 16px;
+  font-size: $btnFontSize;
   font-family: 'Courier New', Courier, monospace;
   padding: 2px;
   text-align: center;
@@ -61,6 +63,18 @@
 
     &:hover {
       background-color: lighten(green, 5%);
+    }
+  }
+
+  &--github {
+    background-image: url("assets/icons/github-mark-32px.png");
+    background-position: 97% 50%;
+    background-repeat: no-repeat;
+    background-size: $btnFontSize;
+    padding-right: $btnFontSize + 10px;
+
+    @include srcset() {
+      background-image: url("assets/icons/github-mark-64px.png");
     }
   }
 }
