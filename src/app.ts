@@ -24,6 +24,10 @@ export class App {
 
     config.title = "BDDone";
     config.options.pushState = true;
+    if (window.location.href.includes("/bddone/")) {
+      config.options.root = "/bddone/";
+    }
+
     config.map([
       {
         moduleId: "planning/overview",
