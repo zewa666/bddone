@@ -1,5 +1,5 @@
 import { autoinject } from "aurelia-framework";
-import { AppRouter } from "aurelia-router";
+import { AppRouter, NavigationInstruction, RouteConfig } from "aurelia-router";
 import { localStorageMiddleware, MiddlewarePlacement, rehydrateFromLocalStorage, Store } from "aurelia-store";
 import { Subscription } from "rxjs";
 
@@ -28,6 +28,29 @@ export class App {
       config.options.root = "/bddone/";
     }
 
+    const handleUnknownRoutes = (instruction: NavigationInstruction): RouteConfig => {
+      if (instruction.fragment.startsWith("/access_token")) {
+        instruction.config = {} as any;
+        instruction.config.name = "callback";
+        instruction.config.moduleId = "navigation/callback";
+        instruction.config.route = "authcb";
+        instruction.config.redirect = "authcb" + instruction.fragment.replace("/", "#");
+
+        return instruction.config;
+      }
+
+      if (instruction.fragment.startsWith("authcb#access_token")) {
+        instruction.config = {} as any;
+        instruction.config.name = "callback";
+        instruction.config.moduleId = "navigation/callback";
+        instruction.config.route = instruction.fragment;
+
+        return instruction.config;
+      }
+    };
+
+    config.mapUnknownRoutes(handleUnknownRoutes);
+
     config.map([
       {
         moduleId: "planning/overview",
@@ -54,10 +77,7 @@ export class App {
         moduleId: "navigation/callback",
         name: "callback",
         nav: false,
-        route: [
-          "authcb",
-          "*acces-token="
-        ],
+        route: "authcb",
         title: "Auth callback"
       }
     ]);
